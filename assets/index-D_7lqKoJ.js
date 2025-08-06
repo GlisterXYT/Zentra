@@ -14878,7 +14878,7 @@ const Kt = z("Zap", [
                                 color: c.primary,
                                 textShadow: `0 0 20px ${c.primary}50`
                             },
-                            children: "RONIX"
+                            children: "Vyper"
                         })
                     }), u.jsx("div", {
                         className: "hidden md:flex items-center space-x-6",
@@ -15077,13 +15077,19 @@ const Kt = z("Zap", [
                             color: t.primary,
                             textShadow: `0 0 30px ${t.primary}50, 0 0 60px ${t.primary}30`
                         },
-                        children: ["RONIX", u.jsx("div", {
-                            className: "absolute inset-0 font-orbitron font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl opacity-30 blur-sm -z-10",
-                            style: {
-                                color: t.primary
-                            },
-                            children: "RONIX"
-                        })]
+                        children: [
+                            "Vyper",
+                            u.jsx("div", {
+                                className: "absolute inset-0 font-orbitron font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl opacity-30 blur-sm -z-10",
+                                style: { color: t.primary },
+                                children: "Vyper"
+                            }),
+                            u.jsx("div", {
+                                className: "block w-full text-xs sm:text-sm md:text-base lg:text-lg font-orbitron font-normal mt-2 text-center",
+                                style: { color: t.primaryLight, letterSpacing: 2 },
+                                children: "(not real)"
+                            })
+                        ]
                     }), u.jsx("div", {
                         className: "w-24 sm:w-32 md:w-40 h-1 mx-auto rounded-full animate-pulse",
                         style: {
@@ -16702,7 +16708,7 @@ const Kt = z("Zap", [
                                     className: "text-gray-300 text-sm",
                                     children: [u.jsx("strong", {
                                         children: "Note:"
-                                    }), " Keys help maintain our service for Vyper (not real)."]
+                                    }), " Keys help maintain our service for Vyper."]
                                 })]
                             })]
                         })
