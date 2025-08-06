@@ -14878,7 +14878,7 @@ const Kt = z("Zap", [
                                 color: c.primary,
                                 textShadow: `0 0 20px ${c.primary}50`
                             },
-                            children: "RONIX"
+                            children: "Vyper (not real)"
                         })
                     }), u.jsx("div", {
                         className: "hidden md:flex items-center space-x-6",
@@ -15077,13 +15077,21 @@ const Kt = z("Zap", [
                             color: t.primary,
                             textShadow: `0 0 30px ${t.primary}50, 0 0 60px ${t.primary}30`
                         },
-                        children: ["RONIX", u.jsx("div", {
-                            className: "absolute inset-0 font-orbitron font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl opacity-30 blur-sm -z-10",
-                            style: {
-                                color: t.primary
-                            },
-                            children: "RONIX"
-                        })]
+                        children: [
+                            "Vyper",
+                            u.jsx("div", {
+                                className: "font-orbitron font-black text-base sm:text-lg md:text-xl lg:text-2xl mt-2 opacity-80",
+                                style: { color: t.primary },
+                                children: "(meme)"
+                            }),
+                            u.jsx("div", {
+                                className: "absolute inset-0 font-orbitron font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl opacity-30 blur-sm -z-10",
+                                style: {
+                                    color: t.primary
+                                },
+                                children: "RONIX"
+                            })
+                        ]
                     }), u.jsx("div", {
                         className: "w-24 sm:w-32 md:w-40 h-1 mx-auto rounded-full animate-pulse",
                         style: {
@@ -15220,9 +15228,15 @@ const Kt = z("Zap", [
                             textShadow: `0 0 30px ${t.primary}50`
                         },
                         children: "Why Choose Ronix Hub?"
+                        children: "Why Choose Vyper Hub?"
+                        children: "Why Choose Vyper (not real its a meme) Hub?"
+                        children: "Why Choose Vyper (not real) Hub?"
                     }), u.jsx("p", {
                         className: "text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto",
                         children: "Here are some feautes, why you should choose Ronix."
+                        children: "Here are some features, why you should choose Vyper."
+                        children: "Here are some features, why you should choose Vyper (not real its a meme)."
+                        children: "Here are some features, why you should choose Vyper (not real)."
                     })]
                 }), u.jsx("div", {
                     className: "flex justify-center",
@@ -15294,13 +15308,19 @@ const Kt = z("Zap", [
             getThemeColors: n
         } = Re(), r = n(), i = [{
             question: "Is Ronix Hub safe to use?",
-            answer: "Yes, Ronix Hub uses advanced anti-detection technology and is regularly updated to ensure maximum safety and security for all users."
+            answer: "Yes, Vyper Hub uses advanced anti-detection technology and is regularly updated to ensure maximum safety and security for all users."
+            answer: "Yes, Vyper (not real its a meme) Hub uses advanced anti-detection technology and is regularly updated to ensure maximum safety and security for all users."
+            answer: "Yes, Vyper (not real) Hub uses advanced anti-detection technology and is regularly updated to ensure maximum safety and security for all users."
         }, {
             question: "Which platforms are supported?",
-            answer: "Ronix Hub supports Windows, macOS, iOS, and Android. Download the appropriate version for your device from the download page."
+            answer: "Vyper Hub supports Windows, macOS, iOS, and Android. Download the appropriate version for your device from the download page."
+            answer: "Vyper (not real its a meme) Hub supports Windows, macOS, iOS, and Android. Download the appropriate version for your device from the download page."
+            answer: "Vyper (not real) Hub supports Windows, macOS, iOS, and Android. Download the appropriate version for your device from the download page."
         }, {
             question: "Do I need to pay for Ronix Hub?",
-            answer: "Ronix Hub offers both free and premium tiers. The free version includes core functionality, while premium unlocks advanced features and priority support."
+            answer: "Vyper Hub offers both free and premium tiers. The free version includes core functionality, while premium unlocks advanced features and priority support."
+            answer: "Vyper (not real its a meme) Hub offers both free and premium tiers. The free version includes core functionality, while premium unlocks advanced features and priority support."
+            answer: "Vyper (not real) Hub offers both free and premium tiers. The free version includes core functionality, while premium unlocks advanced features and priority support."
         }, {
             question: "How do I get support?",
             answer: "Join our Discord community for instant support, updates, and to connect with other users. Our team is active and ready to help!"
@@ -15324,6 +15344,12 @@ const Kt = z("Zap", [
                     }), u.jsx("p", {
                         className: "text-base sm:text-lg text-gray-300",
                         children: "Got questions? We've got answers. Find everything you need to know about Ronix."
+                        children: "Got questions? We've got answers. Find everything you need to know about Vyper."
+                        children: "Got questions? We've got answers. Find everything you need to know about Vyper (not real its a meme)."
+                        children: "Got questions? We've got answers. Find everything you need to know about Vyper (not real)."
+                        children: "Vyper (not real)"
+                        children: "Vyper (not real its a meme)"
+                        children: "Vyper"
                     })]
                 }), u.jsx("div", {
                     className: "space-y-3",
@@ -15481,6 +15507,9 @@ const Kt = z("Zap", [
                     children: [u.jsx("div", {
                         className: "text-gray-400 text-sm font-orbitron text-center lg:text-left",
                         children: "© 2025 Ronix Hub. All rights reserved."
+                        children: "© 2025 Vyper Hub. All rights reserved."
+                        children: "© 2025 Vyper (not real its a meme) Hub. All rights reserved."
+                        children: "© 2025 Vyper (not real) Hub. All rights reserved."
                     }), u.jsxs("div", {
                         className: "flex flex-col sm:flex-row items-center gap-3 sm:gap-4",
                         children: [u.jsxs("div", {
@@ -15595,8 +15624,8 @@ const Kt = z("Zap", [
             icon: u.jsx(m5, {
                 size: 18
             }),
-            version: "v.1.0.0",
-            url: "https://loot-link.com/s?II1JdfST",
+            version: "this is a meme",
+            url: "",
             manualStatus: null
         }, {
             id: "macos",
@@ -15604,36 +15633,36 @@ const Kt = z("Zap", [
             icon: u.jsx(Af, {
                 size: 18
             }),
-            version: "v.1.0.0",
-            url: "https://loot-link.com/s?II1JdfST",
-            manualStatus: "Released"
+            version: "this is a meme",
+            url: "",
+            manualStatus: "this is a meme"
         }, {
-            id: "ios",
-            name: "iOS",
+            id: "this is a meme",
+            name: "this is a meme",
             icon: u.jsx(Af, {
                 size: 18
             }),
-            version: "v.1.0.0",
+            version: "this is a meme",
             url: "",
             manualStatus: null
         }, {
             id: "android",
-            name: "Android",
+            name: "this is a meme",
             icon: u.jsx(d5, {
                 size: 18
             }),
-            version: "v.1.0.0",
-            url: "https://loot-link.com/s?II1JdfST",
+            version: "this is a meme",
+            url: "",
             manualStatus: null
         }, {
             id: "vietnam",
-            name: "Vietnam",
+            name: "this is a meme",
             icon: u.jsx("span", {
                 className: "text-lg",
                 children: "🇻🇳"
             }),
-            version: "v.1.0.0",
-            url: "https://www.mediafire.com/file/6zmd9n52vxu16tm/%25F0%259F%2587%25BB%25F0%259F%2587%25B3Ronix_682_VIETNAM%25F0%259F%25A4%258D.apk/file",
+            version: "this is a meme",
+            url: "",
             manualStatus: null,
             flag: null
         }], w = b => {
@@ -15785,6 +15814,9 @@ const Kt = z("Zap", [
                                 textShadow: `0 0 30px ${m.primary}50`
                             },
                             children: "Download Ronix"
+                        children: "Download Vyper"
+                        children: "Download Vyper (not real its a meme)"
+                        children: "Download Vyper (not real)"
                         }), u.jsx("p", {
                             className: "text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto",
                             children: "Choose your platform and download the utility you want."
@@ -15796,6 +15828,9 @@ const Kt = z("Zap", [
                             children: [u.jsx("img", {
                                 src: "puvtcw.png",
                                 alt: "Ronix Banner",
+                                alt: "Vyper Banner",
+                                alt: "Vyper (not real its a meme) Banner",
+                                alt: "Vyper (not real) Banner",
                                 className: "w-full h-auto rounded-2xl shadow-2xl border",
                                 style: {
                                     borderColor: `${m.primary}30`,
