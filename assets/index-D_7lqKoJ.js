@@ -14753,7 +14753,7 @@ const Kt = z("Zap", [
     A5 = ({
         children: e
     }) => {
-        const [t, n] = k.useState(() => localStorage.getItem("ronix-theme") || "red"), r = o => {
+        const [t, n] = k.useState(() => localStorage.getItem("ronix-theme") || "purple"), r = o => {
             n(o), localStorage.setItem("ronix-theme", o), i(na[o])
         }, i = o => {
             const a = document.createElement("style");
@@ -14878,7 +14878,7 @@ const Kt = z("Zap", [
                                 color: c.primary,
                                 textShadow: `0 0 20px ${c.primary}50`
                             },
-                            children: "Vyper"
+                            children: "Zentra"
                         })
                     }), u.jsx("div", {
                         className: "hidden md:flex items-center space-x-6",
@@ -15077,19 +15077,13 @@ const Kt = z("Zap", [
                             color: t.primary,
                             textShadow: `0 0 30px ${t.primary}50, 0 0 60px ${t.primary}30`
                         },
-                        children: [
-                            "Vyper",
-                            u.jsx("div", {
-                                className: "absolute inset-0 font-orbitron font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl opacity-30 blur-sm -z-10",
-                                style: { color: t.primary },
-                                children: "Vyper"
-                            }),
-                            u.jsx("div", {
-                                className: "block w-full text-xs sm:text-sm md:text-base lg:text-lg font-orbitron font-normal mt-2 text-center",
-                                style: { color: t.primaryLight, letterSpacing: 2 },
-                                children: "(not real)"
-                            })
-                        ]
+                        children: ["Zentra", u.jsx("div", {
+                            className: "absolute inset-0 font-orbitron font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl opacity-30 blur-sm -z-10",
+                            style: {
+                                color: t.primary
+                            },
+                            children: "Zentra"
+                        })]
                     }), u.jsx("div", {
                         className: "w-24 sm:w-32 md:w-40 h-1 mx-auto rounded-full animate-pulse",
                         style: {
@@ -15225,10 +15219,10 @@ const Kt = z("Zap", [
                             color: t.primary,
                             textShadow: `0 0 30px ${t.primary}50`
                         },
-                        children: "Why Choose Vyper Hub (not real)?"
+                        children: "Why Choose Zentra Hub?"
                     }), u.jsx("p", {
                         className: "text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto",
-                        children: "Here are some features, why you should choose Vyper (not real)."
+                        children: "Here are some features, why you should choose Zentra."
                     })]
                 }), u.jsx("div", {
                     className: "flex justify-center",
@@ -15299,14 +15293,14 @@ const Kt = z("Zap", [
         const [e, t] = k.useState(null), {
             getThemeColors: n
         } = Re(), r = n(), i = [{
-            question: "Is Vyper Hub (not real) safe to use?",
-            answer: "Yes, Vyper Hub (not real) uses advanced anti-detection technology and is regularly updated to ensure maximum safety and security for all users."
+            question: "Is Zentra Hub safe to use?",
+            answer: "Yes, Zentra Hub uses advanced anti-detection technology and is regularly updated to ensure maximum safety and security for all users."
         }, {
             question: "Which platforms are supported?",
-            answer: "Vyper Hub (not real) supports Windows, macOS, iOS, and Android. Download the appropriate version for your device from the download page."
+            answer: "Zentra Hub supports Windows, macOS, iOS, and Android. Download the appropriate version for your device from the download page."
         }, {
-            question: "Do I need to pay for Vyper Hub (not real)?",
-            answer: "Vyper Hub (not real) offers both free and premium tiers. The free version includes core functionality, while premium unlocks advanced features and priority support."
+            question: "Do I need to pay for Zentra Hub?",
+            answer: "Zentra Hub offers both free and premium tiers. The free version includes core functionality, while premium unlocks advanced features and priority support."
         }, {
             question: "How do I get support?",
             answer: "Join our Discord community for instant support, updates, and to connect with other users. Our team is active and ready to help!"
@@ -15329,7 +15323,7 @@ const Kt = z("Zap", [
                         children: "Frequently Asked Questions"
                     }), u.jsx("p", {
                         className: "text-base sm:text-lg text-gray-300",
-                        children: "Got questions? We've got answers. Find everything you need to know about Vyper (not real)."
+                        children: "Got questions? We've got answers. Find everything you need to know about Zentra."
                     })]
                 }), u.jsx("div", {
                     className: "space-y-3",
@@ -15422,10 +15416,10 @@ const Kt = z("Zap", [
                                 color: t.primary,
                                 textShadow: `0 0 20px ${t.primary}50`
                             },
-                            children: "Vyper"
+                            children: "Zentra"
                         }), u.jsx("p", {
                             className: "text-gray-300 mb-4 leading-relaxed text-sm font-orbitron",
-                            children: u.jsxs("span", {children: ["(not real)", u.jsx("br", {}), "A Roblox Utility"]})
+                            children: "A Roblox Utility"
                         }), u.jsx("div", {
                             className: "flex space-x-3",
                             children: u.jsx("button", {
@@ -15486,12 +15480,12 @@ const Kt = z("Zap", [
                     },
                     children: [u.jsx("div", {
                         className: "text-gray-400 text-sm font-orbitron text-center lg:text-left",
-                        children: "© 2025 Vyper Hub (not real). All rights reserved."
+                        children: "© 2025 Zentra Hub. All rights reserved."
                     }), u.jsxs("div", {
                         className: "flex flex-col sm:flex-row items-center gap-3 sm:gap-4",
                         children: [u.jsxs("div", {
                             className: "text-gray-400 text-sm font-orbitron text-center",
-                                    children: ["Designed by", " ", u.jsxs("a", {
+                            children: ["Designed by", " ", u.jsxs("a", {
                                 href: "https://github.com/AdvanceFTeam",
                                 target: "_blank",
                                 rel: "noopener noreferrer",
@@ -15790,7 +15784,7 @@ const Kt = z("Zap", [
                                 color: m.primary,
                                 textShadow: `0 0 30px ${m.primary}50`
                             },
-                            children: "Download Ronix"
+                            children: "Download Zentra"
                         }), u.jsx("p", {
                             className: "text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto",
                             children: "Choose your platform and download the utility you want."
@@ -15801,7 +15795,7 @@ const Kt = z("Zap", [
                             className: "relative max-w-2xl mx-auto",
                             children: [u.jsx("img", {
                                 src: "puvtcw.png",
-                                alt: "Ronix Banner",
+                                alt: "Zentra Banner",
                                 className: "w-full h-auto rounded-2xl shadow-2xl border",
                                 style: {
                                     borderColor: `${m.primary}30`,
@@ -16708,7 +16702,7 @@ const Kt = z("Zap", [
                                     className: "text-gray-300 text-sm",
                                     children: [u.jsx("strong", {
                                         children: "Note:"
-                                    }), " Keys help maintain our service for Vyper."]
+                                    }), " Keys help maintain our service for ronix."]
                                 })]
                             })]
                         })
