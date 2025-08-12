@@ -15606,14 +15606,14 @@ const Kt = z("Zap", [
             }),
             version: "not released",
             url: "",
-            manualStatus: "Released"
+            manualStatus: "not released"
         }, {
             id: "ios",
             name: "not released",
             icon: u.jsx(Af, {
                 size: 18
             }),
-            version: "v.1.0.0",
+            version: "not released",
             url: "",
             manualStatus: null
         }, {
@@ -15632,7 +15632,7 @@ const Kt = z("Zap", [
                 className: "text-lg",
                 children: "🇻🇳"
             }),
-            version: "v.1.0.0",
+            version: "not released",
             url: "",
             manualStatus: null,
             flag: null
@@ -15651,10 +15651,10 @@ const Kt = z("Zap", [
                 }
             }
             return b.url && b.url.trim() !== "" ? {
-                status: "Released",
+                status: "not released",
                 statusColor: "#10B981"
             } : {
-                status: "W.I.P",
+                status: "not released",
                 statusColor: "#F59E0B"
             }
         };
