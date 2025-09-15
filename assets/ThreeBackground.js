@@ -91,8 +91,11 @@ export default function ThreeBackground() {
           left: 0,
           width: "100vw",
           height: "100vh",
-          zIndex: 0,
+          zIndex: 100,
           pointerEvents: "none",
+          opacity: 1,
+          border: "4px dashed #3b82f6",
+          background: "rgba(59,130,246,0.15)",
         }}
       />
       <svg
@@ -102,10 +105,12 @@ export default function ThreeBackground() {
           left: "60vw",
           width: "400px",
           height: "400px",
-          zIndex: 1,
-          opacity: 0.5,
-          filter: "blur(30px)",
+          zIndex: 101,
+          opacity: 0.9,
+          filter: "blur(10px)",
           pointerEvents: "none",
+          border: "2px solid #3b82f6",
+          background: "rgba(59,130,246,0.10)",
         }}
         viewBox="0 0 400 400"
       >
