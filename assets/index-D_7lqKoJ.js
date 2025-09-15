@@ -15067,55 +15067,75 @@ const Kt = z("Zap", [
         return u.jsx("section", {
             id: "home",
             className: "min-h-screen flex items-center justify-center relative overflow-hidden pt-20 px-4 sm:px-6",
+            style: { perspective: "1200px" },
             children: u.jsxs("div", {
                 className: "text-center z-10 max-w-4xl mx-auto w-full",
+                onMouseMove: e => {
+                  const el = e.currentTarget;
+                  const x = e.clientX / window.innerWidth - 0.5;
+                  const y = e.clientY / window.innerHeight - 0.5;
+                  el.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 10}deg)`;
+                },
+                onMouseLeave: e => {
+                  e.currentTarget.style.transform = "rotateY(0deg) rotateX(0deg)";
+                },
                 children: [u.jsxs("div", {
                     className: "mb-8 animate-float",
+                    style: { transformStyle: "preserve-3d" },
                     children: [u.jsxs("h1", {
                         className: "font-orbitron font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 relative",
                         style: {
                             color: t.primary,
-                            textShadow: `0 0 30px ${t.primary}50, 0 0 60px ${t.primary}30`
+                            textShadow: `0 0 30px ${t.primary}50, 0 0 60px ${t.primary}30`,
+                            transform: "translateZ(40px)"
                         },
                         children: ["Zentra", u.jsx("div", {
                             className: "absolute inset-0 font-orbitron font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl opacity-30 blur-sm -z-10",
                             style: {
-                                color: t.primary
+                                color: t.primary,
+                                transform: "translateZ(-40px)"
                             },
                             children: "Zentra"
                         })]
                     }), u.jsx("div", {
                         className: "w-24 sm:w-32 md:w-40 h-1 mx-auto rounded-full animate-pulse",
                         style: {
-                            background: `linear-gradient(to right, ${t.primaryLight}, ${t.primary}, ${t.primaryDark})`
+                            background: `linear-gradient(to right, ${t.primaryLight}, ${t.primary}, ${t.primaryDark})`,
+                            boxShadow: `0 0 30px ${t.primary}60`,
+                            transform: "translateZ(20px)"
                         }
                     })]
                 }), u.jsx("h2", {
                     className: "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 animate-fadeInUp leading-tight",
+                    style: { transform: "translateZ(30px)" },
                     children: "The Best Roblox Utility."
                 }), u.jsx("p", {
                     className: "text-base sm:text-lg md:text-xl text-gray-300 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed animate-fadeInUp",
+                    style: { transform: "translateZ(20px)" },
                     children: "The ultimate solution for undetected, stable, and performant automation"
                 }), u.jsx("div", {
                     className: "flex justify-center animate-fadeInUp",
+                    style: { transform: "translateZ(40px)" },
                     children: u.jsxs(os, {
                         to: "/download",
                         className: "group relative flex items-center gap-2 sm:gap-3 text-white px-4 sm:px-6 py-3 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 overflow-hidden",
                         style: {
                             background: `linear-gradient(135deg, ${t.primary}90, ${t.primaryDark}80)`,
                             boxShadow: `0 8px 25px ${t.primary}40, inset 0 1px 0 rgba(255,255,255,0.1)`,
-                            border: `1px solid ${t.primary}60`
+                            border: `1px solid ${t.primary}60`,
+                            transform: "translateZ(50px)"
                         },
                         onMouseEnter: n => {
-                            window.innerWidth < 768 || (n.currentTarget.style.background = `linear-gradient(135deg, ${t.primaryLight}95, ${t.primary}85)`, n.currentTarget.style.boxShadow = `0 12px 30px ${t.primary}60, inset 0 1px 0 rgba(255,255,255,0.2), 0 0 25px ${t.primary}50`, n.currentTarget.style.transform = "scale(1.05) translateY(-2px)", n.currentTarget.style.border = `1px solid ${t.primaryLight}80`)
+                            window.innerWidth < 768 || (n.currentTarget.style.background = `linear-gradient(135deg, ${t.primaryLight}95, ${t.primary}85)`, n.currentTarget.style.boxShadow = `0 12px 30px ${t.primary}60, inset 0 1px 0 rgba(255,255,255,0.2), 0 0 25px ${t.primary}50`, n.currentTarget.style.transform = "scale(1.05) translateY(-2px) translateZ(50px)", n.currentTarget.style.border = `1px solid ${t.primaryLight}80`)
                         },
                         onMouseLeave: n => {
-                            window.innerWidth < 768 || (n.currentTarget.style.background = `linear-gradient(135deg, ${t.primary}90, ${t.primaryDark}80)`, n.currentTarget.style.boxShadow = `0 8px 25px ${t.primary}40, inset 0 1px 0 rgba(255,255,255,0.1)`, n.currentTarget.style.transform = "scale(1)", n.currentTarget.style.border = `1px solid ${t.primary}60`)
+                            window.innerWidth < 768 || (n.currentTarget.style.background = `linear-gradient(135deg, ${t.primary}90, ${t.primaryDark}80)`, n.currentTarget.style.boxShadow = `0 8px 25px ${t.primary}40, inset 0 1px 0 rgba(255,255,255,0.1)`, n.currentTarget.style.transform = "scale(1) translateZ(50px)", n.currentTarget.style.border = `1px solid ${t.primary}60`)
                         },
                         children: [u.jsx("div", {
                             className: "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300",
                             style: {
-                                background: `radial-gradient(circle at 30% 30%, ${t.primaryLight}20, transparent 50%), radial-gradient(circle at 70% 70%, ${t.primary}15, transparent 50%)`
+                                background: `radial-gradient(circle at 30% 30%, ${t.primaryLight}20, transparent 50%), radial-gradient(circle at 70% 70%, ${t.primary}15, transparent 50%)`,
+                                transform: "translateZ(10px)"
                             }
                         }), window.innerWidth >= 768 && u.jsxs(u.Fragment, {
                             children: [u.jsx("div", {
@@ -15138,12 +15158,14 @@ const Kt = z("Zap", [
                             })]
                         }), u.jsxs("div", {
                             className: "relative z-10 flex items-center gap-2 sm:gap-3",
+                            style: { transform: "translateZ(20px)" },
                             children: [u.jsx("div", {
                                 className: "flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full",
                                 style: {
                                     background: "linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1))",
                                     boxShadow: `0 0 15px ${t.primary}60, inset 0 1px 0 rgba(255,255,255,0.3)`,
-                                    border: "1px solid rgba(255,255,255,0.2)"
+                                    border: "1px solid rgba(255,255,255,0.2)",
+                                    transform: "translateZ(10px)"
                                 },
                                 children: u.jsx(I0, {
                                     size: window.innerWidth < 768 ? 12 : 16,
