@@ -7,6 +7,8 @@ import * as THREE from "three";
 export default function ThreeBackground() {
   const mountRef = useRef(null);
   const mouse = useRef({ x: 0, y: 0 });
+  const orbRef = useRef();
+  const burstParticles = useRef([]);
 
   useEffect(() => {
     const mount = mountRef.current;
@@ -40,20 +42,41 @@ export default function ThreeBackground() {
       particles.push(mesh);
     }
 
-    // Mouse-follow effect
+    // Mouse-follow effect for orb
     function onMouseMove(e) {
-      mouse.current.x = (e.clientX / window.innerWidth) * 2 - 1;
-      mouse.current.y = -(e.clientY / window.innerHeight) * 2 + 1;
+      mouse.current.x = e.clientX;
+      mouse.current.y = e.clientY;
+      if (orbRef.current) {
+        orbRef.current.style.left = `${e.clientX - 25}px`;
+        orbRef.current.style.top = `${e.clientY - 25}px`;
+      }
     }
     window.addEventListener("mousemove", onMouseMove);
+
+    // Mouse click burst effect
+    function onMouseClick(e) {
+      const burst = [];
+      for (let i = 0; i < 18; i++) {
+        const angle = (i / 18) * Math.PI * 2;
+        burst.push({
+          x: e.clientX,
+          y: e.clientY,
+          dx: Math.cos(angle) * 6,
+          dy: Math.sin(angle) * 6,
+          life: 1
+        });
+      }
+      burstParticles.current.push(...burst);
+    }
+    window.addEventListener("click", onMouseClick);
 
     // Animate particles and wave
     function animate() {
       requestAnimationFrame(animate);
       const t = Date.now() * 0.001;
       particles.forEach((p, idx) => {
-        p.position.x += Math.sin(t + idx) * 0.01 + mouse.current.x * 0.05;
-        p.position.y += Math.cos(t + idx) * 0.01 + mouse.current.y * 0.05;
+        p.position.x += Math.sin(t + idx) * 0.01 + (mouse.current.x / window.innerWidth - 0.5) * 0.2;
+        p.position.y += Math.cos(t + idx) * 0.01 + (mouse.current.y / window.innerHeight - 0.5) * 0.2;
       });
       // Animate wave vertices
       for (let i = 0; i < waveGeometry.vertices?.length || 0; i++) {
@@ -61,6 +84,22 @@ export default function ThreeBackground() {
         vertex.y = Math.sin(t * 2 + i * 0.3) * 1.5;
       }
       renderer.render(scene, camera);
+
+      // Animate burst particles (canvas overlay)
+      if (window.burstCanvas) {
+        const ctx = window.burstCanvas.getContext("2d");
+        ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+        burstParticles.current.forEach((p, idx) => {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, 8 * p.life, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(59,130,246,${p.life})`;
+          ctx.fill();
+          p.x += p.dx;
+          p.y += p.dy;
+          p.life -= 0.04;
+        });
+        burstParticles.current = burstParticles.current.filter(p => p.life > 0);
+      }
     }
     animate();
 
@@ -70,12 +109,36 @@ export default function ThreeBackground() {
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     }
-    window.addEventListener("resize", handleResize);
+  window.addEventListener("resize", handleResize);
+
+    // Setup burst canvas overlay
+    let burstCanvas = document.createElement("canvas");
+    burstCanvas.width = window.innerWidth;
+    burstCanvas.height = window.innerHeight;
+    burstCanvas.style.position = "fixed";
+    burstCanvas.style.top = "0";
+    burstCanvas.style.left = "0";
+    burstCanvas.style.width = "100vw";
+    burstCanvas.style.height = "100vh";
+    burstCanvas.style.zIndex = 102;
+    burstCanvas.style.pointerEvents = "none";
+    burstCanvas.style.background = "none";
+    window.burstCanvas = burstCanvas;
+    document.body.appendChild(burstCanvas);
+
+    function burstResize() {
+      burstCanvas.width = window.innerWidth;
+      burstCanvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", burstResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("click", onMouseClick);
+      window.removeEventListener("resize", burstResize);
       mount.removeChild(renderer.domElement);
+      document.body.removeChild(burstCanvas);
       renderer.dispose();
     };
   }, []);
@@ -91,11 +154,29 @@ export default function ThreeBackground() {
           left: 0,
           width: "100vw",
           height: "100vh",
-          zIndex: 100,
+          zIndex: 101,
           pointerEvents: "none",
           opacity: 1,
           border: "4px dashed #3b82f6",
           background: "rgba(59,130,246,0.15)",
+        }}
+      />
+      {/* Mouse-follow glowing orb */}
+      <div
+        ref={orbRef}
+        style={{
+          position: "fixed",
+          left: "50vw",
+          top: "50vh",
+          width: "50px",
+          height: "50px",
+          borderRadius: "50%",
+          background: "radial-gradient(circle, #3b82f6 60%, #60a5fa 100%)",
+          boxShadow: "0 0 40px 20px #3b82f6, 0 0 80px 40px #60a5fa",
+          opacity: 0.7,
+          zIndex: 103,
+          pointerEvents: "none",
+          transition: "left 0.1s, top 0.1s",
         }}
       />
       <svg
